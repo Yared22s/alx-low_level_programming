@@ -2,13 +2,14 @@
 #include <time.h>
 #include <stdlib.h>
 /**
- * Main - Determin if a random number is posetive or negative
+ * main - Determin if a random number is posetive, negative or zero.
  *
  * Return: 0 on  Success
  */
 int main(void)
 {
 	int n;
+
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	/* your code gose here */
