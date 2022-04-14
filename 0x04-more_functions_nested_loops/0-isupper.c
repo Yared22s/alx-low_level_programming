@@ -1,13 +1,11 @@
 #include "main.h"
+
 /**
- * _isupper - checks for uppercase.
- * @c: character to check.
- * Return: 1 if c is uppercase, otherwise return 0.
+ * _isupper - checks for uppercase character
+ * @letter: the character to be tracked
+ * Return: 1 if c is uppercase, 0 otherwise
  */
-int _isupper(int c)
+int _isupper(int letter)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	else
-		return (0);
+	return (letter >= 'A' && letter <= 'Z');
 }
