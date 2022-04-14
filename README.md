@@ -1,1 +1,1 @@
-This Directory Contains Functions and nested loops
+This is debugging main directory
