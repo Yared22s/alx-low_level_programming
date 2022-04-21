@@ -1,1 +1,1 @@
-This is debugging main directory
+Pointers Arrays and strigs main
