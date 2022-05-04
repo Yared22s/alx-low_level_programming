@@ -1,11 +1,23 @@
- * _print_rev_recursion - prints a string in reverse
- * @s: the string to print
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * main - Entry point
+ *
+ * @argc: Counts the number of parameters that go into main
+ * @argv: Pointer of array of pointers containing strings entering main
+ * Return: Always 0 (Success)
  */
-void _print_rev_recursion(char *s)
+int main(int argc, char **argv)
 {
-	if (*s)
+	int i;
+
+	if (argc > 0)
 	{
-		_print_rev_recursion(s + 1);
-		_putchar(*s);
+		for (i = 0; i < argc; i++)
+		{
+			printf("%s\n", argv[i]);
+		}
 	}
+	return (0);
 }
