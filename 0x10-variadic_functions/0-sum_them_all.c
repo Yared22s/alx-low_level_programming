@@ -3,22 +3,24 @@
 #include <stdarg.h>
 /**
   * sum_them_all - sums all arguments
-  * @n: number of arguments
-  * @...: variable list of arguments
-  * Return: sum of all arguments
+  * @n: Variadic inputs
+  * Return: sum
   */
 int sum_them_all(const unsigned int n, ...)
 {
-	unsigned int i, result;
-	va_list ap;
+	unsigned int i, sum = 0;
+	va_list vl;
 
 	if (n == 0)
 		return (0);
-	va_start(ap, n);
-	for (i = result = 0; i < n; i++)
+	va_start(vl, n);
+
+	for (i = sum = 0; i < n; i++)
 	{
-		result += va_arg(ap, int);
+		sum += va_arg(vl, const unsigned int);
 	}
-	va_end(ap);
-	return (result);
+
+	va_end(vl);
+
+	return (sum);
 }
