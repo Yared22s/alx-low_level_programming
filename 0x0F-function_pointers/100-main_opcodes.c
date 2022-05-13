@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
   * main - define function
   * @void - describe argument
