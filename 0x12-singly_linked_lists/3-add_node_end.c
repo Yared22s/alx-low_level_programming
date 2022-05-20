@@ -28,7 +28,6 @@ void *_strdup(const char *src)
 	len = _strlen(src);
 	dest = malloc((len + 1) * sizeof(char));
 	if (dest == NULL)
-		free(dest)
 		return (NULL);
 
 	for (i = 0; src[i]; i++)
@@ -54,7 +53,6 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
-		free(new)
 		return (NULL);
 	new->str = dupstr;
 	new->len = _strlen(str);
