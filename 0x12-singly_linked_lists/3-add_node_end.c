@@ -52,8 +52,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (dupstr == NULL)
 		return (NULL);
 	new = malloc(sizeof(list_t));
-	if (new == NULL)
-	
+		if (new == NULL)	
 	return (NULL);
 	new->str = dupstr;
 	new->len = _strlen(str);
