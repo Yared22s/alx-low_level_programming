@@ -7,19 +7,9 @@
   */
 void free_list(list_t *head)
 {
-	list_t *cu
-	
-	while (head)
-	{
-		cu = head->next;
-		free(head->str);
-		free(head);
-		head = cu;
-	}	
-	/*
 	if (head == NULL)
 		return;
 	free_list(head->next);
 	free(head->str);
-	free(head);*/
+	free(head);
 }
