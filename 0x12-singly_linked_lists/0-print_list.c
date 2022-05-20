@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "lists.h"
 #include <stdlib.h>
+
 /**
   * print_list - prints all elements of a list_t list
   * @h: singly linked list to print
@@ -8,12 +9,16 @@
   */
 size_t print_list(const list_t *h)
 {
-	size_t i;
+	int nodes = 0;
 
-	for (i = 0; h; i++)
+	while (h != NULL)
 	{
+		if (h->str == null)
+		pritf("[0] (nil)\n");
+		else
 		printf("[%d] %s\n", h->len, h->str);
 		h = h->next;
+		nodes++;
 	}
-	return (i);
+	return (nodes);
 }
