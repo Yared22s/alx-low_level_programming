@@ -10,9 +10,10 @@
 int _strlen(const char *s)
 {
 	int i;
-	
+
 	for (i = 0; s[i]; i++)
-		return (i);
+		;
+	return (i);
 }
 /**
   * _strdup - recreation of string duplicate function
@@ -23,7 +24,7 @@ void *_strdup(const char *src)
 {
 	int len, i;
 	char *dest;
-	
+
 	len = _strlen(src);
 	dest = malloc((len + 1) * sizeof(char));
 	if (dest == NULL)
@@ -43,7 +44,7 @@ list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new, *current;
 	char *dupstr;
-	
+
 	if (str == NULL)
 		return (NULL);
 	dupstr = _strdup(str);
@@ -51,7 +52,6 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
-		/*free (new:)*/
 		return (NULL);
 	new->str = dupstr;
 	new->len = _strlen(str);
