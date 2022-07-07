@@ -4,10 +4,11 @@
   * @head: head of the list
   * Return: the sum of the nodes
   */
+
 int sum_dlistint(dlistint_t *head)
 {
 	int sum;
-
+	
 	while (head)
 	{
 		sum += head->n;
