@@ -1,18 +1,15 @@
 #include "lists.h"
-/**
-  * sum_dlistint - sums all nodes in a linked list
-  * @head: head of the list
-  * Return: the sum of the nodes
-  */
+
+/*
+ * sum_dlistint - sum all data (n) in a linked list dlistint_t.
+ * @head: Double pointer to struct.
+ *
+ * Return: 0 if empty or sum of n value
+ */
 
 int sum_dlistint(dlistint_t *head)
 {
-	int sum;
-	
-	while (head)
-	{
-		sum += head->n;
-		head = head->next;
-	}
-	return (sum);
+	if(head)
+		return (head->n + sum_dlistint(head->next));
+	return (0);
 }
