@@ -1,44 +1,37 @@
 #include "hash_tables.h"
 /**
- * hash_table_delete - function that deletes a hash table.
- *
- * @ht: is the hash table
- */
+  * hash_table_delete - delete the whole hash table
+  * @ht: the hash table
+  */
 void hash_table_delete(hash_table_t *ht)
 {
-	hash_node_t *head = NULL;
-	unsigned long int i = 0;
+	unsigned long int i;
+	hash_node_t *tmp;
 
-	/*Checking if ht exist*/
 	if (ht == NULL)
-	{
 		return;
-	}
-	while (i < ht->size)
+	for (i = 0; i < ht->size; i++)
 	{
-		head = ht->array[i];
-		if (head != NULL)
+		if (ht->array[i] != NULL)
 		{
-			recursive_delete(head);
+			printf("First for loop\n");
+			while (ht->array[i])
+			{
+				printf("Freeing\n");
+				tmp = ht->array[i];
+				free(tmp->key);
+				tmp->key = NULL;
+				free(tmp->value);
+				tmp->value = NULL;
+				ht->array[i] = ht->array[i]->next;
+				free(tmp);
+				tmp = NULL;
+			}
 		}
-		i++;
 	}
 	free(ht->array);
+	ht->array = NULL;
 	free(ht);
-}
-/**
- * recursive_delete - function that use the recursive method
- * to delete the liked list recursively
- *
- * @node: is a node of hash table
- */
-void recursive_delete(hash_node_t *node)
-{
-	if (node->next)
-	{
-		recursive_delete(node->next);
-	}
-	free(node->key);
-	free(node->value);
-	free(node);
+	ht = NULL;
+	printf("Leaving\n");
 }
